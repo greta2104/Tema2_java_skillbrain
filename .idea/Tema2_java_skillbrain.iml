@@ -1,9 +1,71 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<module type="JAVA_MODULE" version="4">
-  <component name="NewModuleRootManager" inherit-compiler-output="true">
-    <exclude-output />
-    <content url="file://$MODULE_DIR$" />
-    <orderEntry type="inheritedJdk" />
-    <orderEntry type="sourceFolder" forTests="false" />
-  </component>
-</module>
+//Tema 3.2.7 SkillBrain
+
+public class Main {
+    public static void main(String[] args) {
+        // 1
+        System.out.println("1. Numere pare până la 10:");
+        afiseazaPare(10);
+
+        // 2
+        int[] sirInt = {1, -5, 20, -34, 16, 29, 36, -4};
+        double[] sirDouble = {3.45, -2.68, 356, -75.96, 64, 19.28};
+
+        System.out.println("\n2. Suma sirInt: " + calculeazaSumaInt(sirInt));
+        System.out.println("Suma sirDouble: " + calculeazaSumaDouble(sirDouble));
+
+        // 3
+        System.out.print("\n3. Sir inversat sirInt: ");
+        inverseazaSir(sirInt);
+
+        // 4
+        String text = "string de test";
+        System.out.println("\n4. Număr vocale în \"" + text + "\": " + numaraVocale(text));
+    }
+
+    // Exercitiul 1
+    public static void afiseazaPare(int n) {
+        for (int i = 0; i <= n; i += 2) {
+            System.out.print(i + " ");
+        }
+        System.out.println();
+    }
+
+    // Ex2 Suma unui șir de întregi
+    public static int calculeazaSumaInt(int[] array) {
+        int suma = 0;
+        for (int num : array) {
+            suma += num;
+        }
+        return suma;
+    }
+
+    // Ex2.2 Suma unui șir de double
+    public static double calculeazaSumaDouble(double[] array) {
+        double suma = 0;
+        for (double num : array) {
+            suma += num;
+        }
+        return suma;
+    }
+
+    // Ex3 Inversarea unui șir
+    public static void inverseazaSir(int[] array) {
+        for (int i = array.length - 1; i >= 0; i--) {
+            System.out.print(array[i] + " ");
+        }
+        System.out.println();
+    }
+
+    // Ex4 Numără vocalele într-un text
+    public static int numaraVocale(String text) {
+        int count = 0;
+        text = text.toLowerCase();
+        for (int i = 0; i < text.length(); i++) {
+            char c = text.charAt(i);
+            if (c == 'a' || c == 'e' || c == 'i' || c == 'o' || c == 'u') {
+                count++;
+            }
+        }
+        return count;
+    }
+}
